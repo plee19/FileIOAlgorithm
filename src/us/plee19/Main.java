@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Main class to show features of FileInput, FileOutput, Meals, MealsArray and MealType classes.
+ * @author plee19
+ * @version 1
+ */
 public class Main {
 
     private final static FileInput indata = new FileInput("meals_data.csv");
@@ -21,6 +26,9 @@ public class Main {
         runMenu();
     }
 
+    /**
+     * Method to list options leading to other methods, requiring user input, run before the runMenu() method.
+     */
     private static void printMenu() {
         System.out.println("Select Action");
         System.out.println("1. List All Items");
@@ -30,6 +38,9 @@ public class Main {
         System.out.print("Please Enter your Choice: ");
     }
 
+    /**
+     * Method to accept user input and run corresponding method.
+     */
     private static void runMenu() {
         char ans;
         boolean userContinue = true;
@@ -44,6 +55,10 @@ public class Main {
             }
         }
     }
+
+    /**
+     * Method to request user input for meal type that reads from mealsArray using enum MealType and returns list of meals.
+     */
     private static void listByMeal() {
         char ans;
         int ansNum=0;
@@ -52,13 +67,13 @@ public class Main {
         ArrayList<MealType> mealTypeName = new ArrayList<>();
 
         System.out.println("Which Meal Type");
-        int i=0;
+        int i=1;
 
         for(MealType m : MealType.values())
         {
             if (i < MealType.values().length + 1) {
-                mealTypeName.get(i++);
-                System.out.println(i + ") "+ m.getMeal());
+                mealTypeName.add(m);
+                System.out.println(i++ + ") "+ m.getMeal());
             }
             else {
                 System.out.println("Too Many Meal Types " + m.getMeal() + " not included.");
@@ -76,6 +91,10 @@ public class Main {
         }
         mealsArray.printMealsByType(mealType);
     }
+
+    /**
+     * Method to search mealsArray for specific user input search string on meal name.
+     */
     private static void searchByName() {
         keyboard.nextLine();
         System.out.print("Please Enter Value: ");

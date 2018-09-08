@@ -3,13 +3,21 @@ package us.plee19;
 import java.util.ArrayList;
 
 /**
- * Created by mgreen14 on 12/29/17.
+ * Class to create ArrayList of meals and associated methods.
+ * @author plee19
+ * @version 1
  */
 public class MealsArray {
     private ArrayList<Meals> meals = new ArrayList<>();
     private int i = 0;
     private int calories;
 
+    /**
+     * Method to create a new meal element to the meals ArrayList.
+     * @param arg1 String argument checked against MealType enum
+     * @param arg2 String argument of meal name
+     * @param arg3 String argument of meal's calorie value
+     */
     public void addElementWithStrings(String arg1, String arg2, String arg3) {
         MealType mealType;
         if (i < meals.size() + 1) {
@@ -45,10 +53,17 @@ public class MealsArray {
         }
     }
 
+    /**
+     * Method to return the entries of the meals ArrayList.
+     * @return meals entries of meals ArrayList
+     */
     public ArrayList<Meals> getMeals() {
         return meals;
     }
 
+    /**
+     * Method to print all meals entries' names to the console.
+     */
     public void printAllMeals() {
         for (Meals item: meals) {
             if (item != null) {
@@ -58,6 +73,10 @@ public class MealsArray {
         }
     }
 
+    /**
+     * Method to print all meals entries' names to the console, by selected MealType enum.
+     * @param mealType enum of MealType by which to limit the result
+     */
     public void printMealsByType(MealType mealType) {
         for (Meals item: meals) {
             if (item != null && item.getMealType() == mealType) {
@@ -67,6 +86,10 @@ public class MealsArray {
         }
     }
 
+    /**
+     * Method to print meals entries' names matching a name search.
+     * @param s String value of meal name by which to limit the result
+     */
     public void printByNameSearch(String s) {
         for (Meals item: meals) {
             if (item != null && item.getItem().indexOf(s) >= 0) {
