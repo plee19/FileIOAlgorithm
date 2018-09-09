@@ -21,11 +21,12 @@ public class MealsArrayTest extends TestCase {
     @Test
     public void testAddElementWithStrings() {
         meals.addElementWithStrings("Dinner", "pizza", "300");
+        assertNotNull(meals);
     }
 
     @Test
     public void testGetMeals() {
-        meals.getMeals();
+        assertNotNull(meals.getMeals());
     }
 
     @Test
