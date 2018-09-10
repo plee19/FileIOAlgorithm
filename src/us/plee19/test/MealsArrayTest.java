@@ -12,7 +12,6 @@ import java.io.PrintStream;
 public class MealsArrayTest extends TestCase {
 
     MealsArray meals;
-    FileInput inputTest;
     private final ByteArrayOutputStream outStuff = new ByteArrayOutputStream();
     private final PrintStream original = System.out;
 
